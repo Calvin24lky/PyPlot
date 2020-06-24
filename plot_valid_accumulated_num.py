@@ -30,24 +30,24 @@ error_params = dict(elinewidth=2, ecolor='black', capsize=3)  # 设置误差标�
 
 fig, ax = plt.subplots()
 
-rects1 = plt.bar(x, height=fedavg_list, width=0.15, color='#31b5ef', label="FedAvg [Google Team]",
+rects1 = plt.bar(x, height=fedavg_list, width=0.15, color='#2ca02c', label="FedAvg [Google Team]",
                  hatch='.')  # , yerr=err_fa_list, error_kw=error_params)
-rects11 = plt.bar(x, height=fedavg_choose_list - fedavg_list, width=0.15, color='#31b5ef',
+rects11 = plt.bar(x, height=fedavg_choose_list - fedavg_list, width=0.15, color='#2ca02c',
                   alpha=0.5, bottom=fedavg_list)
 
-rects2 = plt.bar([i + 0.15 for i in x], height=fedcs_list, color='#027ba2', width=0.15, label="FedCS [Nishio, 2019]",
+rects2 = plt.bar([i + 0.15 for i in x], height=fedcs_list, color='#1f77b4', width=0.15, label="FedCS [Nishio, 2019]",
                  hatch='xx')  # , yerr=err_fc_list, error_kw=error_params)
-rects21 = plt.bar([i + 0.15 for i in x], height=fedcs_choose_list - fedcs_list, width=0.15, color='#027ba2',
+rects21 = plt.bar([i + 0.15 for i in x], height=fedcs_choose_list - fedcs_list, width=0.15, color='#1f77b4',
                   alpha=0.5, bottom=fedcs_list)
 
-rects3 = plt.bar([i + 0.3 for i in x], height=ddqn_list, color='#39b7a9', width=0.15, label="DDQN-based (Proposed)",
+rects3 = plt.bar([i + 0.3 for i in x], height=ddqn_list, color='#ff7f0e', width=0.15, label="DDQN-based (Proposed)",
                  hatch='')  # , yerr=err_dq_list, error_kw=error_params)
-rects31 = plt.bar([i + 0.3 for i in x], height=pred_choose_list - ddqn_list, width=0.15, color='#39b7a9',
+rects31 = plt.bar([i + 0.3 for i in x], height=pred_choose_list - ddqn_list, width=0.15, color='#ff7f0e',
                   alpha=0.5, bottom=ddqn_list)
 
-rects4 = plt.bar([i + 0.45 for i in x], height=offline_list, color='#f0b418', width=0.15,
+rects4 = plt.bar([i + 0.45 for i in x], height=offline_list, color='#d62728', width=0.15,
                  label="Offline", hatch='\\')  # , yerr=err_pr_list, error_kw=error_params)
-rects41 = plt.bar([i + 0.45 for i in x], height=offline_choose_list - offline_list, width=0.15, color='#f0b418',
+rects41 = plt.bar([i + 0.45 for i in x], height=offline_choose_list - offline_list, width=0.15, color='#d62728',
                   alpha=0.5, bottom=offline_list)
 #
 # rects4 = plt.bar([i + 0.45 for i in x], height=pred_list, color='#d62728', width=0.15,
@@ -105,8 +105,8 @@ ind = np.arange(len(men_means))  # the x locations for the groups
 width = 0.35  # the width of the bars
 
 rects1 = ax2.bar(ind - width / 2, men_means, width, color='white')
-rects2 = ax2.bar(0.15, 15, width, color='#89c210', hatch='')
-rects3 = ax2.bar(0.15, 25, width, color='#89c210', alpha=0.5, hatch='')
+rects2 = ax2.bar(0.15, 15, width, color='#49b9c2', hatch='')
+rects3 = ax2.bar(0.15, 25, width, color='#49b9c2', alpha=0.5, hatch='')
 
 ax2.annotate(color='#000000', s="# of invalid\n Participants",
              xy=(0.45, 20), xycoords='data',
@@ -115,7 +115,7 @@ ax2.annotate(color='#000000', s="# of invalid\n Participants",
              arrowprops=dict(arrowstyle="-[", color='#000000', connectionstyle='angle3'))
 
 ax2.annotate(color='#000000', s="# of valid\n Participants",
-             xy=(0.45, 8), xycoords='data',
+             xy=(0.45, 7), xycoords='data',
              xytext=(0.8, 3), textcoords='data',
              size=14,
              arrowprops=dict(arrowstyle="-[", color='#000000', connectionstyle='angle3'))
