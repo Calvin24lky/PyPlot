@@ -3,15 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 from scipy.interpolate import make_interp_spline
+import random
 
 def to_percent(temp, position):
     return '%1.0f'%(temp) + '%'
 
 def printPredTaskUsage():
-    df = pd.read_csv('./usage/pred_usage.csv', usecols=['time', 'system/cpu', 'system/memory']).values
-
-    # print(df.shape[0])
-    # print(df[0])
+    df = pd.read_csv('./resource_usage/simple_test/pred_usage.csv', usecols=['time', 'system/cpu', 'system/memory']).values
+    # df = pd.read_csv('./resource_usage/on_board_test/system.csv', usecols=['time', 'system/cpu', 'system/memory']).values
 
     x = [0, ]
     cpu_usage = [0, ]
@@ -29,25 +28,18 @@ def printPredTaskUsage():
     plt.yticks([10, 20, 30, 40, 50, 60])
     plt.xticks([0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300])
     plt.plot(x, cpu_usage, '-', linewidth='2', label='CPU Consumption')
-    # plt.fill_between(x, poi_min, poi_max, alpha=0.25)
     plt.plot(x, mem_usage, '-.', linewidth='2', label='Memory Consumption')
-    # plt.fill_between(x, sl_min, sl_max, alpha=0.25)
     plt.ylabel('Real-time Consumption (Percent)', fontdict={'size': 18})
     plt.xlabel('Running Time (Second)', fontdict={'size': 18})
     leg = plt.legend(fontsize=18)
     leg.set_draggable(True)
-
     plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
-
     plt.tight_layout()
-
     plt.show()
 
 def printFLTaskUsage():
-    df = pd.read_csv('./usage/fl_usage.csv', usecols=['time', 'system/cpu', 'system/memory']).values
-
-    # print(df.shape[0])
-    # print(df[0])
+    # df = pd.read_csv('./resource_usage/simple_test/fl_usage.csv', usecols=['time', 'system/cpu', 'system/memory']).values
+    df = pd.read_csv('./resource_usage/on_board_test/system.csv', usecols=['time', 'system/cpu', 'system/memory']).values
 
     x = [0, ]
     cpu_usage = [0, ]
@@ -62,23 +54,22 @@ def printFLTaskUsage():
 
     plt.tick_params(labelsize=15)
     plt.ylim(0, 100)
-    plt.yticks([0, 20, 40, 60, 80, 100])
-    plt.xticks([0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300])
+    # plt.yticks([0, 20, 40, 60, 80, 100])
+    # plt.xticks([0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300])
+
+    # use plt.step() to plot step line
     plt.step(x, cpu_usage, '-', linewidth='2', label='CPU Consumption')
-    # plt.fill_between(x, poi_min, poi_max, alpha=0.25)
     plt.plot(x, mem_usage, '--', linewidth='2', label='Memory Consumption')
-    # plt.fill_between(x, sl_min, sl_max, alpha=0.25)
     plt.ylabel('Real-time Consumption (Percent)', fontdict={'size': 18})
     plt.xlabel('Running Time (Second)', fontdict={'size': 18})
     leg = plt.legend(fontsize=18)
     leg.set_draggable(True)
     plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
     plt.tight_layout()
-
     plt.show()
 
 def printFLTaskNetwork():
-    df = pd.read_csv('usage/fl_net.csv', usecols=['time', 'recv', 'sent']).values
+    df = pd.read_csv('resource_usage/simple_test/fl_net.csv', usecols=['time', 'recv', 'sent']).values
     x = [0,]
     recv_tmp = [0,]
     sent_tmp = [0,]
@@ -119,4 +110,3 @@ if __name__ == '__main__':
     # printPredTaskUsage()
     printFLTaskUsage()
     # printFLTaskNetwork()
-# ‭1,048,576‬
