@@ -183,8 +183,8 @@ def plot_global_model_traiining():
 
     plt.ylim(0.2, 1)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Accuracy of model', fontdict={'size': 18})
-    plt.xlabel('Rounds of global model training', fontdict={'size': 18})
+    plt.ylabel('Accuracy of Model', fontdict={'size': 18})
+    plt.xlabel('Rounds of global-model training', fontdict={'size': 18})
     plt.tick_params(labelsize=14)
     plt.tight_layout()
     leg = plt.legend(fontsize=14)  # , frameon=False)
@@ -211,8 +211,8 @@ def plot_local_model_training():
 
     plt.ylim(0, 1)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Accuracy of model', fontdict={'size': 18})
-    plt.xlabel('Rounds of local-model training', fontdict={'size': 17})
+    plt.ylabel('Accuracy of Model', fontdict={'size': 18})
+    plt.xlabel('Rounds of local-model training', fontdict={'size': 18})
     plt.tick_params(labelsize=14)
     plt.tight_layout()
     leg = plt.legend(fontsize=14)  # , frameon=False)
