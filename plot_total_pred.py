@@ -161,17 +161,17 @@ for i in range(200):
 
 # plt.rcParams['figure.figsize'] = [5.6, 4]
 
-plt.ylim(0, 0.97)
+plt.ylim(-0.04, 1)
 # plt.yticks([0.3, 0.5, 0.7, 0.9])
 plt.plot(x, poi_mean, '-', color='#df0000', linewidth='2', label='POI (LSTM)')
 plt.fill_between(x, poi_min, poi_max, alpha=0.25)
 plt.plot(x, sl_mean, '-.', color='#aa55fe', linewidth='2', label='Sojourn duration (LSTM)')
 plt.fill_between(x, sl_min, sl_max, alpha=0.25)
 
-plt.tick_params(labelsize=14)
-plt.ylabel('Prediction Accuracy', fontdict={'size': 18})
-plt.xlabel('Epoch', fontdict={'size': 18})
-leg = plt.legend(fontsize=16)
+plt.tick_params(labelsize=16)
+plt.ylabel('Prediction Accuracy', fontdict={'size': 20})
+plt.xlabel('Epoch', fontdict={'size': 20})
+leg = plt.legend(fontsize=17)
 leg.set_draggable(True)
 
 # plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))

@@ -23,14 +23,14 @@ def printPredTaskUsage():
             mem_usage.append(float(df[i][2]))
             print(df[i])
 
-    plt.tick_params(labelsize=14)
     plt.ylim(0, 60)
     plt.yticks([10, 20, 30, 40, 50, 60])
     plt.xticks([0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300])
-    plt.plot(x, cpu_usage, '-', linewidth='2', label='CPU Consumption')
-    plt.plot(x, mem_usage, '-.', linewidth='2', label='Memory Consumption')
-    plt.ylabel('Real-time Consumption', fontdict={'size': 18})
-    plt.xlabel('Running Time (Second)', fontdict={'size': 18})
+    plt.plot(x, cpu_usage, '-', linewidth='2.5', label='CPU Consumption')
+    plt.plot(x, mem_usage, '-.', linewidth='2.5', label='Memory Consumption')
+    plt.tick_params(labelsize=16)
+    plt.ylabel('Real-time Consumption', fontdict={'size': 20})
+    plt.xlabel('Running Time (Second)', fontdict={'size': 20})
     leg = plt.legend(fontsize=18)
     leg.set_draggable(True)
     plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
@@ -107,6 +107,6 @@ def printFLTaskNetwork():
     plt.show()
 
 if __name__ == '__main__':
-    # printPredTaskUsage()
+    printPredTaskUsage()
     # printFLTaskUsage()
-    printFLTaskNetwork()
+    # printFLTaskNetwork()
