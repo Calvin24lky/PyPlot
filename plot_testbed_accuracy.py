@@ -176,16 +176,16 @@ def plot_global_model_traiining():
     iid_50round_all_acc = np.loadtxt(iid_50round_all_result)
     x = np.arange(len(nniid_50round_all_acc))
 
-    plt.plot(x, iid_50round_all_acc, ':', linewidth=2, label='Device always available (i.i.d)')
-    plt.plot(x, nniid_50round_all_acc, '-', linewidth=2, label='Device always available (non-i.i.d)')
-    plt.plot(x, final_nniid_50round_pro09_acc, '--', linewidth=2, label='Fail probability=10% (non-i.i.d)')
-    plt.plot(x, final_nniid_50round_pro07_acc, '-.', linewidth=2, label='Fail probability=30% (non-i.i.d)')
+    plt.plot(x, iid_50round_all_acc, ':', linewidth=3, label='Device always available (i.i.d)')
+    plt.plot(x, nniid_50round_all_acc, '-', linewidth=3, label='Device always available (non-i.i.d)')
+    plt.plot(x, final_nniid_50round_pro09_acc, '--', linewidth=3, label='Fail probability=10% (non-i.i.d)')
+    plt.plot(x, final_nniid_50round_pro07_acc, '-.', linewidth=3, label='Fail probability=30% (non-i.i.d)')
 
-    plt.ylim(0.2, 1)
+    plt.ylim(0.01, 1.05)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Test Accuracy of Model', fontdict={'size': 20})
-    plt.xlabel('Rounds of global-model training', fontdict={'size': 20})
-    plt.tick_params(labelsize=16)
+    plt.ylabel('Test Accuracy of Model', fontdict={'size': 21})
+    plt.xlabel('Rounds of global-model training', fontdict={'size': 22})
+    plt.tick_params(labelsize=20)
     plt.tight_layout()
     leg = plt.legend(fontsize=16)  # , frameon=False)
     leg.set_draggable(True)
@@ -204,16 +204,16 @@ def plot_local_model_training():
 
     x = np.arange(len(final_c0_nniid_50round_all_acc))
 
-    plt.plot(x, final_c0_iid_50round_pro09_acc, ':', linewidth=2, label='Device always available (i.i.d)')
-    plt.plot(x, final_c0_nniid_50round_all_acc, '-', linewidth=2, label='Device always available (non-i.i.d)')
-    plt.plot(x, final_c0_nniid_50round_pro09_acc, '--', linewidth=2, label='Fail probability=10% (non-i.i.d)')
-    plt.plot(x, final_c0_nniid_50round_pro07_acc, '-.', linewidth=2, label='Fail probability=30% (non-i.i.d)')
+    plt.plot(x, final_c0_iid_50round_pro09_acc, ':', linewidth=3, label='Device always available (i.i.d)')
+    plt.plot(x, final_c0_nniid_50round_all_acc, '-', linewidth=3, label='Device always available (non-i.i.d)')
+    plt.plot(x, final_c0_nniid_50round_pro09_acc, '--', linewidth=3, label='Fail probability=10% (non-i.i.d)')
+    plt.plot(x, final_c0_nniid_50round_pro07_acc, '-.', linewidth=3, label='Fail probability=30% (non-i.i.d)')
 
-    plt.ylim(0, 1.05)
+    plt.ylim(-0.09, 1.05)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Test Accuracy of Model', fontdict={'size': 20})
-    plt.xlabel('Rounds of local-model training', fontdict={'size': 20})
-    plt.tick_params(labelsize=16)
+    plt.ylabel('Test Accuracy of Model', fontdict={'size': 21})
+    plt.xlabel('Rounds of local-model training', fontdict={'size': 22})
+    plt.tick_params(labelsize=20)
     plt.tight_layout()
     leg = plt.legend(fontsize=16)  # , frameon=False)
     leg.set_draggable(True)
@@ -222,8 +222,8 @@ def plot_local_model_training():
 if __name__ == '__main__':
     # plot_raw_result()
     # plot_raw_acc()
-    plot_global_model_traiining()
-    # plot_local_model_training()
+    # plot_global_model_traiining()
+    plot_local_model_training()
 
 
 

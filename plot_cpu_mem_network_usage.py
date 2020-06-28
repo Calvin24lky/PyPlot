@@ -89,17 +89,18 @@ def printFLTaskNetwork():
     recv_smooth = make_interp_spline(x, recv)(x_smooth)
     sent_smooth = make_interp_spline(x, sent)(x_smooth)
 
-    plt.tick_params(labelsize=14)
     plt.ylim(-1000000, 17000000)
     # plt.yticks([0, 20, 40, 60, 80, 100])
-    plt.xticks([0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300])
+    plt.xticks([0, 60, 120, 180, 240, 300])
     plt.plot(x_smooth, recv_smooth, '-', linewidth='2', label='Received from FL parameter server')
     plt.plot(x_smooth, sent_smooth, '--', linewidth='2', label='Sent to FL parameter server')
     # plt.plot(x, recv)
     # plt.plot(x, sent)
-    plt.ylabel('Data Transmitted (Byte)', fontdict={'size': 18})
-    plt.xlabel('Running Time (Second)', fontdict={'size': 18})
-    leg = plt.legend(fontsize=14)
+    plt.ylabel('Data Transmitted (Byte)', fontdict={'size': 21})
+    plt.xlabel('Running Time (Second)', fontdict={'size': 22})
+    plt.tick_params(labelsize=20)
+
+    leg = plt.legend(fontsize=16)
     leg.set_draggable(True)
     # plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
     plt.tight_layout()
@@ -107,6 +108,6 @@ def printFLTaskNetwork():
     plt.show()
 
 if __name__ == '__main__':
-    printPredTaskUsage()
+    # printPredTaskUsage()
     # printFLTaskUsage()
-    # printFLTaskNetwork()
+    printFLTaskNetwork()
