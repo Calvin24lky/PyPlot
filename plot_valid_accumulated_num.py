@@ -1,10 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# plt.rcParams['font.family'] = 'sans-serif'
-# plt.rcParams['font.sans-serif'] = 'Times New Roman'
-# plt.rcParams['figure.figsize'] = (5.6, 3.5)
-
 label_list = ['50', '100', '150', '200', '250']  # 横坐标刻度显示值
 
 fedavg_list = np.array([184, 384, 600, 810, 994])  # 纵坐标值1
@@ -70,9 +66,6 @@ rects41 = plt.bar([i + 0.45 for i in x], height=offline_choose_list - offline_li
 # plt.rcParams['figure.figsize'] = (5.6, 3.5)
 
 
-plt.ylabel("# of Valid / Invalid Participants", fontsize=18)
-ax = plt.gca()  # 获取当前图像的坐标轴信息
-ax.yaxis.get_major_formatter().set_powerlimits((0, 1))
 
 # plt.ylabel("Ratio of Valid Participants", fontsize=18)
 # plt.ylim(0, 1.5)
@@ -80,11 +73,14 @@ ax.yaxis.get_major_formatter().set_powerlimits((0, 1))
 
 
 plt.xticks([index + 0.22 for index in x], label_list)
+plt.ylim(0, 2999)
+plt.ylabel("# of Valid / Invalid Participants", fontsize=18)
+ax = plt.gca()  # 获取当前图像的坐标轴信息
+ax.yaxis.get_major_formatter().set_powerlimits((0, 1))
 
-plt.tick_params(labelsize=14)
-
-plt.xlabel("FL Rounds", fontsize=18)
-leg = ax.legend(fontsize=14, loc=1)  # , frameon=False)
+plt.xlabel("FL Rounds", fontsize=20)
+plt.tick_params(labelsize=16)
+leg = ax.legend(fontsize=15)  # , frameon=False)
 leg.set_draggable(True)
 plt.tight_layout()
 # plt.savefig('./imgs/Accumulated numbers.pdf', bbox_inches='tight')
@@ -96,7 +92,7 @@ plt.tight_layout()
 #              arrowprops=dict(arrowstyle="-[", color='r', connectionstyle='angle3'))
 
 
-left, bottom, width, height = 0.13, 0.46, 0.3, 0.3
+left, bottom, width, height = 0.13, 0.42, 0.3, 0.3
 ax2 = fig.add_axes([left, bottom, width, height])
 
 men_means = (20, 10, 10, 10, 10)
@@ -111,13 +107,13 @@ rects3 = ax2.bar(0.15, 25, width, color='#49b9c2', alpha=0.5, hatch='')
 ax2.annotate(color='#000000', s="# of invalid\n Participants",
              xy=(0.45, 20), xycoords='data',
              xytext=(0.8, 15), textcoords='data',
-             size=14,
+             size=15,
              arrowprops=dict(arrowstyle="-[", color='#000000', connectionstyle='angle3'))
 
 ax2.annotate(color='#000000', s="# of valid\n Participants",
              xy=(0.45, 7), xycoords='data',
              xytext=(0.8, 3), textcoords='data',
-             size=14,
+             size=15,
              arrowprops=dict(arrowstyle="-[", color='#000000', connectionstyle='angle3'))
 
 # ax2.bar(0.01, bottom=0.02, height=0.02, width=0.0005, color='#d62728',
