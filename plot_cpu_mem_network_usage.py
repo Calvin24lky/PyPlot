@@ -99,7 +99,7 @@ def printFLTaskNetwork():
     # plt.plot(x, sent)
     plt.ylabel('Data Transmitted (Byte)', fontdict={'size': 18})
     plt.xlabel('Running Time (Second)', fontdict={'size': 18})
-    leg = plt.legend(fontsize=17)
+    leg = plt.legend(fontsize=14)
     leg.set_draggable(True)
     # plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
     plt.tight_layout()
@@ -108,5 +108,5 @@ def printFLTaskNetwork():
 
 if __name__ == '__main__':
     # printPredTaskUsage()
-    printFLTaskUsage()
-    # printFLTaskNetwork()
+    # printFLTaskUsage()
+    printFLTaskNetwork()

@@ -176,14 +176,14 @@ def plot_global_model_traiining():
     iid_50round_all_acc = np.loadtxt(iid_50round_all_result)
     x = np.arange(len(nniid_50round_all_acc))
 
-    plt.plot(x, iid_50round_all_acc, ':', linewidth=2, label='All alive (i.i.d)')
-    plt.plot(x, nniid_50round_all_acc, '-', linewidth=2, label='All alive (non-i.i.d)')
+    plt.plot(x, iid_50round_all_acc, ':', linewidth=2, label='3 devices always available (i.i.d)')
+    plt.plot(x, nniid_50round_all_acc, '-', linewidth=2, label='3 devices always available (non-i.i.d)')
     plt.plot(x, final_nniid_50round_pro09_acc, '--', linewidth=2, label='Device fail probability=10% (non-i.i.d)')
     plt.plot(x, final_nniid_50round_pro07_acc, '-.', linewidth=2, label='Device fail probability=30% (non-i.i.d)')
 
     plt.ylim(0.2, 1)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Accuracy of Model', fontdict={'size': 18})
+    plt.ylabel('Test Accuracy of Model', fontdict={'size': 18})
     plt.xlabel('Rounds of global-model training', fontdict={'size': 18})
     plt.tick_params(labelsize=14)
     plt.tight_layout()
@@ -204,14 +204,14 @@ def plot_local_model_training():
 
     x = np.arange(len(final_c0_nniid_50round_all_acc))
 
-    plt.plot(x, final_c0_iid_50round_pro09_acc, ':', linewidth=2, label='All alive (i.i.d)')
-    plt.plot(x, final_c0_nniid_50round_all_acc, '-', linewidth=2, label='All alive (non-i.i.d)')
+    plt.plot(x, final_c0_iid_50round_pro09_acc, ':', linewidth=2, label='This device always available (i.i.d)')
+    plt.plot(x, final_c0_nniid_50round_all_acc, '-', linewidth=2, label='This device always available (non-i.i.d)')
     plt.plot(x, final_c0_nniid_50round_pro09_acc, '--', linewidth=2, label='Device fail probability=10% (non-i.i.d)')
     plt.plot(x, final_c0_nniid_50round_pro07_acc, '-.', linewidth=2, label='Device fail probability=30% (non-i.i.d)')
 
     plt.ylim(0, 1)
     # plt.ylabel('Accuracy', fontdict={'size': 16})
-    plt.ylabel('Accuracy of Model', fontdict={'size': 18})
+    plt.ylabel('Test Accuracy of Model', fontdict={'size': 18})
     plt.xlabel('Rounds of local-model training', fontdict={'size': 18})
     plt.tick_params(labelsize=14)
     plt.tight_layout()
@@ -222,8 +222,8 @@ def plot_local_model_training():
 if __name__ == '__main__':
     # plot_raw_result()
     # plot_raw_acc()
-    # plot_global_model_traiining()
-    plot_local_model_training()
+    plot_global_model_traiining()
+    # plot_local_model_training()
 
 
 
