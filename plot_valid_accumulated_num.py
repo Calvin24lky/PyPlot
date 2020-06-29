@@ -45,32 +45,6 @@ rects4 = plt.bar([i + 0.45 for i in x], height=offline_list, color='#d62728', wi
                  label="Offline", hatch='\\')  # , yerr=err_pr_list, error_kw=error_params)
 rects41 = plt.bar([i + 0.45 for i in x], height=offline_choose_list - offline_list, width=0.15, color='#d62728',
                   alpha=0.5, bottom=offline_list)
-#
-# rects4 = plt.bar([i + 0.45 for i in x], height=pred_list, color='#d62728', width=0.15,
-#                  label="Proactive FedCS", hatch='\\', yerr=err_pr_list, error_kw=error_params)
-# rects41 = plt.bar([i + 0.45 for i in x], height=pred_choose_list-pred_list, width=0.15, color='#d62728',
-#                   alpha=0.5, bottom=pred_list)
-
-# rects1 = plt.bar(x, height=fedavg_list/fedavg_choose_list, width=0.15, color='#2ca02c', label="FedAvg [Google Team]",
-# hatch='.')
-# rects2 = plt.bar([i + 0.15 for i in x], height=fedcs_list/fedcs_choose_list, color='#1f77b4', width=0.15, label="FedCS [Nishio, 2019]",
-# hatch='xx')
-# rects3 = plt.bar([i + 0.3 for i in x], height=ddqn_list/pred_choose_list, color='#ff7f0e', width=0.15, label="DDQN-based (Proposed)",
-# hatch='')
-# rects4 = plt.bar([i + 0.45 for i in x], height=offline_list/offline_choose_list, color='#d62728', width=0.15,
-# label="Offline", hatch='\\')
-
-# rects4 = plt.bar([i + 0.45 for i in x], height=pred_list/pred_choose_list, color='#d62728', width=0.15,
-# label="Proactive FedCS", hatch='\\')
-
-# plt.rcParams['figure.figsize'] = (5.6, 3.5)
-
-
-
-# plt.ylabel("Ratio of Valid Participants", fontsize=18)
-# plt.ylim(0, 1.5)
-# plt.yticks([0, 0.5, 1])
-
 
 plt.xticks([index + 0.22 for index in x], label_list)
 plt.ylim(0, 2999)
@@ -83,14 +57,6 @@ plt.tick_params(labelsize=16)
 leg = ax.legend(fontsize=15)  # , frameon=False)
 leg.set_draggable(True)
 plt.tight_layout()
-# plt.savefig('./imgs/Accumulated numbers.pdf', bbox_inches='tight')
-
-# plt.annotate(color='r', s="# of\n invalid\n Patis",
-#              xy=(0.1, 350), xycoords='data',
-#              xytext=(0.25,250), textcoords='data',
-#              size=14,
-#              arrowprops=dict(arrowstyle="-[", color='r', connectionstyle='angle3'))
-
 
 left, bottom, width, height = 0.13, 0.42, 0.3, 0.3
 ax2 = fig.add_axes([left, bottom, width, height])
@@ -116,8 +82,6 @@ ax2.annotate(color='#000000', s="# of valid\n Participants",
              size=15,
              arrowprops=dict(arrowstyle="-[", color='#000000', connectionstyle='angle3'))
 
-# ax2.bar(0.01, bottom=0.02, height=0.02, width=0.0005, color='#d62728',
-#                   alpha=1)
 plt.ylim(0, 40)
 ax2.axis('off')
 
